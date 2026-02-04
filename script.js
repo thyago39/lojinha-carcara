@@ -14,15 +14,18 @@ function addToCart(name, price, color, quantity = 1) {
 }
 
 function selectColor(button) {
-    // Remove seleção anterior
-    document.querySelectorAll('.color-btn').forEach(btn => btn.classList.remove('selected'));
+    // 1. Encontra o card do produto onde o botão foi clicado
+    const productCard = button.closest('.product-card');
     
-    // Marca o botão clicado como selecionado
+    // 2. Remove a seleção de outros botões APENAS dentro deste card
+    productCard.querySelectorAll('.color-btn').forEach(btn => btn.classList.remove('selected'));
+    
+    // 3. Marca o botão clicado como selecionado
     button.classList.add('selected');
     
-    // Atualiza o valor da cor selecionada (sem aparecer na tela)
+    // 4. Captura a cor e salva no input oculto DESTE card específico
     const color = button.getAttribute('data-color');
-    document.getElementById('color-display-demon').value = color;
+    productCard.querySelector('.color-display').value = color;
 }
 
 function increaseQuantity(button) {
@@ -127,7 +130,7 @@ function moveSlide(direction) {
     }
 
     // Calcula a porcentagem do deslocamento
-    const offset = currentProductIndex * (100 / itemsPerPage);
+    const offset = currentProductIndex * (101 / itemsPerPage);
     slider.style.transform = `translateX(-${offset}%)`;
 }
 function updateColor(selectElement) {
