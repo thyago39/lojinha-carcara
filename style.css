@@ -223,8 +223,8 @@ hr {
 }
 
 .color-btn.selected {
-    border-color: #081695;
-    box-shadow: 0 0 8px rgba(8, 22, 149, 0.5);
+    border: 4px solid #081695 !important;
+    
 }
 
 .color-selected {
@@ -448,7 +448,7 @@ hr {
 
 .section h2 {
     color: #081695;
-    margin: 0 0 20px 0; /* Zera absolutamente a margem superior do título */
+    margin: 0 0 0px 0; /* Zera absolutamente a margem superior do título */
     padding-top: 0;
     text-transform: uppercase;
 }
@@ -621,7 +621,7 @@ body {
     border: 2px dashed #081695; /* Borda tracejada em azul Carcará */
     padding: 20px;
     border-radius: 15px;
-    margin: 0 auto 30px;
+    margin: 30px auto 30px;
     max-width: 85%;
     line-height: 1.5;
 }
@@ -654,7 +654,7 @@ body {
 }
 
 .logo-img {
-    height: 45px; /* Define um tamanho fixo para não quebrar a barra */
+    height: 35px; /* Define um tamanho fixo para não quebrar a barra */
     width: auto;  /* Mantém a proporção da imagem */
     object-fit: contain;
     border-radius: 5px; /* Opcional: arredonda levemente as bordas do logo */
